@@ -1,0 +1,157 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    position: relative;
+    /* margin: 0px 100px; */
+}
+
+
+@font-face {
+    font-family: "myfont";
+    src: url(1.ttf);
+}
+
+@keyframes keyframe1 {
+    from {
+        background-image: url("../img/1.jpg");
+    }
+
+    to {
+        background-image: url("../img/2.jpg");
+    }
+}
+
+
+#header {
+    height: 300px;
+    margin-bottom: 30px;
+}
+
+#header-img {
+    height: 100%;
+    background-image: url(../img/1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 300px;
+    transition: background 0.5s;
+    animation: keyframe1 5s linear 0s infinite alternate;
+}
+
+#header-text {
+    font-family: myfont;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    top: 0px;
+    line-height: 300px;
+    left: 50%;
+    margin-left: -2.5em;
+    font-size: 60px;
+    text-shadow: 8px 8px 20px #fff;
+}
+
+#main {
+    margin-top: 10px;
+    margin: 0px 100px;
+    color:#fff;
+
+}
+
+.main-desc {
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+
+}
+
+.main-desc h2 {
+    text-align: center;
+    font-size:30px;
+}
+
+.main-desc p {
+    padding-top: 5px;
+    font-size: 24px;
+}
+
+#main>div{
+    transition: all 0.3s; 
+}
+/* #main>div:hover{
+    transform: scale(1.1,1.1);
+} */
+div.desc1{
+    color:black;
+    padding:100px 20px;
+}
+
+div.desc2{
+    padding:240px 20px;
+    height:240px;
+    text-align: center;
+    background-image: url(../img/bg2.jpg);
+    background-size: cover;
+}
+
+
+
+div.desc3{
+    padding:100px 20px;
+    color: #000;
+    padding:100px 20px;
+}
+div.desc4{
+    color:#fff;
+    padding:100px 20px;
+    background-image: url(../img/bg3.jpg);
+    background-size: cover;
+    padding:100px 20px;
+}
+
+div.desc5{
+    color:#000;
+    padding:20px 20px;
+    font-size:30px;
+}
+
+.blur-5 {
+    filter: blur(5px);
+}
+
+#main-img {
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    position: relative;
+    margin: 0px auto;
+}
+
+#main-img>div {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: transform 1s;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.img1 {
+    transform: translate(-100%, 0px);
+}
+
+.img2 {
+    transform: translate(0px, 0px);
+}
+
+.img3 {
+    transform: translate(100%, 0px);
+}
+
+.footer-img{
+    position: relative;
+}
