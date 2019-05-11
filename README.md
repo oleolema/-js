@@ -1,5 +1,8 @@
+## 查看效果  
+>[简单例子](https://oleolema.github.io/SwipeImg-js/example1.html)  
+>[详细例子](https://oleolema.github.io/SwipeImg-js/)   
 ## 如何下载
-使用需要依赖`JQuery`,在 [js/jquery-3.3.3.min.js](https://github.com/oleolema/SwipeImg-js/blob/master/js/jquery-3.3.1.min.js) 中，本项目只有一个文件[js/SwipeImg.js](https://github.com/oleolema/SwipeImg-js/blob/master/js/SwipeImg.js),下载这两个文件到本地即可。
+使用需要依赖`JQuery`,在 [js/jquery-3.3.3.min.js](https://github.com/oleolema/SwipeImg-js/blob/master/js/jquery-3.3.1.min.js) 中，本项目主文件只有一个[js/SwipeImg.js](https://github.com/oleolema/SwipeImg-js/blob/master/js/SwipeImg.js),下载这两个文件到本地即可。
 ## 如何使用
 本项目就是一个例子，可以全部下载运行查看效果。  
 演示一个简单的例子  
@@ -20,8 +23,10 @@ new SwipeImg(".imgbox", imgSrc).show(1500);
 
 #### `show(time,delay)` : 必须调用show方法才会开始轮播  
 * `time`: `Number`类型  切换图片的时间间隔
-* `delay`: `Number` 类型    开始轮播的延迟时间
+* `delay`: `Number` 类型    开始轮播的延迟时间   
 
+**例子演示结束**
+***
 ## 调整样式
 ```js
 var imgSrc = ["img/1.jpg", "img/2.jpg", "img/3.jpg"];
