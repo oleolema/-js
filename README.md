@@ -16,10 +16,18 @@ var imgSrc = ["img/1.jpg", "img/2.jpg", "img/3.jpg"];
 
 new SwipeImg(".imgbox", imgSrc).show(1500);
 ```  
-#### 使用`new SwipeImg(className,resource[,isColor])`创建一个对象  
+#### 使用`new SwipeImg(className,resource[,options])`创建一个对象  
 * `className`：`String` 类型 绑定html中的一个类。  
 * `resource`：`Array` 类型  图片链接数组，可以是网络链接  或者  颜色字符串数组
-* [可选] `isColor`：`Boolean` 类型 是否为图片资源，默认false， 如果为true，`resource`必须传入颜色字符串数组
+* [可选] `options`：`Object`
+```
+{
+    //type 可以传2种2类型，默认是图片资源，SwipeImg.TYPE.color 是颜色资源, SwipeImg.TYPE.element 是元素资源
+    type:SwipeImg.TYPE.color,
+    //button 是切换按钮，传入true显示默认样式按钮，或者传入['a','b']数组来自定义按钮的class，a表示前切换按钮class，b后切换按钮class
+    button:true,
+}
+```
 
 #### `show(time,delay)` : 必须调用show方法才会开始轮播  
 * `time`: `Number`类型  切换图片的时间间隔
