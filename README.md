@@ -22,7 +22,7 @@ new SwipeImg(".imgbox", imgSrc).show(1500);
 * [可选] `options`：`Object`
 ```
 {
-    //type 可以传2种2类型，默认是图片资源，SwipeImg.TYPE.color 是颜色资源, SwipeImg.TYPE.element 是元素资源
+    //type 可以传3种类型，默认是图片资源SwipeImg.TYPE.image，SwipeImg.TYPE.color 是颜色资源, SwipeImg.TYPE.element 是元素资源
     type:SwipeImg.TYPE.color,
     //button 是切换按钮，传入true显示默认样式按钮，或者传入['a','b']数组来自定义按钮的class，a表示前切换按钮class，b后切换按钮class
     button:true,
