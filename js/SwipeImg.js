@@ -8,6 +8,9 @@
     window.SwipeImg = function (imgbox, resources, {
         type,
         button,
+    } = {
+        type: SwipeImg.TYPE.image,
+        button: false,
     }) {
         this.imgbox = $(imgbox); //图片外层
         this.resources = resources; //资源   (默认资源图片资源)
@@ -36,7 +39,7 @@
                 img[0].innerHTML = (this.resources[this.index++ % this.resources.length]);
             };
             this.imgCacheCount = 0;
-        } else {
+        } else if (type === SwipeImg.TYPE.image) {
             this.setNextResource = function (img) {
                 img.css("background-image", `url(${ this.resources[this.index++ % this.resources.length]})`);
             };
@@ -46,6 +49,7 @@
     }
 
     SwipeImg.TYPE = {
+        image: Symbol(),
         color: Symbol(),
         element: Symbol(),
     }
