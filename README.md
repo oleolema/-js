@@ -26,6 +26,11 @@ new SwipeImg(".imgbox", imgSrc).show(1500);
     type:SwipeImg.TYPE.color,
     //button 是切换按钮，传入true显示默认样式按钮，或者传入['a','b']数组来自定义按钮的class，a表示前切换按钮class，b后切换按钮class
     button:true,
+    //ms : 动画持续时间,单位毫秒
+    ms:1000,
+    //fn : 动画过渡效果,'ease','linear'等
+    fn: 'linear',
+    
 }
 ```
 
