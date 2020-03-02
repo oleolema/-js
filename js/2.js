@@ -60,7 +60,9 @@ new SwipeImg(".imgbox2", imgSrc)
     .show(1500);
 
 //全局纯色背景切换
-new SwipeImg(".galble-background", colors.sort(() => Math.random() - 0.5), true)
+new SwipeImg(".galble-background", colors.sort(() => Math.random() - 0.5), {
+        type: SwipeImg.TYPE.color
+    })
     .setTransform(transform1)
     .setImgBoxCss({
         width: "100%",

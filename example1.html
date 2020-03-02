@@ -16,7 +16,10 @@
 <script>
     var imgSrc = ["img/1.jpg", "img/2.jpg", "img/3.jpg"];
 
-    new SwipeImg(".imgbox", imgSrc).show(1500);
+    new SwipeImg(".imgbox", imgSrc, {
+        button: true,
+        ms: 2000,
+    }).show(3000);
 </script>
 
 </html>

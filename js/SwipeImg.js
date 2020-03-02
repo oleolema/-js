@@ -6,20 +6,22 @@
      * @param isColorImg    （可选，默认 false）是否为纯颜色
      */
     window.SwipeImg = function (imgbox, resources, {
-        type,
-        button,
-    } = {
-        type: SwipeImg.TYPE.image,
-        button: false,
-    }) {
+        type = SwipeImg.TYPE.image,
+        button = false,
+        ms = 1000,
+        fn = 'ease',
+    } = {}) {
         this.imgbox = $(imgbox); //图片外层
         this.resources = resources; //资源   (默认资源图片资源)
         this.swipeListener = function () {};
         this.imgCache = [];
         this.imgCacheCount = 5;
         this.buttonClass = button === true ? ['pre-img-btn', 'next-img-btn', 'img-btn'] : button;
-
+        this.ms = ms;
+        this.fn = fn;
         this.swipeTimer = 0;
+
+        this.swipeIng = false;
 
         this.index = 0;
         this.imgClass = ["swipe-img1" + randomStr(), "swipe-img2" + randomStr(), "swipe-img3" + randomStr()];
@@ -156,6 +158,9 @@
     }
 
     SwipeImg.prototype.pre = function () {
+        if (this.swipeIng) {
+            return;
+        }
         this.swipeListener();
         clearInterval(this.swipeTimer);
         this.setNextClass(this.imgClass[2], this.imgClass[1], this.imgClass[0]);
@@ -163,6 +168,9 @@
     }
 
     SwipeImg.prototype.next = function () {
+        if (this.swipeIng) {
+            return;
+        }
         this.swipeListener();
         clearInterval(this.swipeTimer);
         this.setNextClass(this.imgClass[0], this.imgClass[1], this.imgClass[2]);
@@ -171,6 +179,10 @@
 
 
     SwipeImg.prototype.setNextClass = function (preClass, hidenClass, showClass) {
+        this.swipeIng = true;
+        setTimeout(() => {
+            this.swipeIng = false;
+        }, this.ms);
         var imga = $("." + preClass); //预备的图片
         var imgb = $("." + hidenClass); //需要隐藏的图片
         var imgc = $("." + showClass); //需要显示的图片
@@ -220,7 +232,7 @@
             height: "100%",
             width: "100%",
             position: "absolute",
-            transition: "transform 1s",
+            transition: `transform ${this.ms}ms ${this.fn}`,
             "background-repeat": "no-repeat",
             "background-position": "center",
             "background-size": "cover",
